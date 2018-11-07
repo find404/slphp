@@ -1,4 +1,4 @@
-# AIPHP
+# SLPHP
 
 写在前面
 
@@ -275,11 +275,11 @@ eg:
 redis机制
 ``` 
 框架在载入当前控制器方法时候，已经封装好对应的redis_cluster，（后续会追加主从）
-开发者只须set和get，无需关系架构部分。
+开发者只须set和get，无需关心架构部分。
 
 ```
 
-```
+
 
 搜索引擎机制
 ``` 
@@ -318,6 +318,7 @@ self::$_viewData
 self::$_config
 //当前方法下，模板语言包
 self::$_lang
+
 ```
 
 # 架构篇
@@ -329,37 +330,9 @@ self::$_lang
 
 
 
-# 数据篇
-
-
-在框架首页，简单的sql查询插入，普通业务代码，简易算法。
-在ab 压测请求数10000 并发4 的情况下
-
-```
-Server Software:        Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9
-Server Hostname:        127.0.0.1
-Server Port:            80
-
-Document Path:          /
-Document Length:        36 bytes
-
-Concurrency Level:      4
-Time taken for tests:   11.643 seconds
-Complete requests:      10000
-Failed requests:        0
-Total transferred:      2600000 bytes
-HTML transferred:       360000 bytes
-Requests per second:    858.89 [#/sec] (mean)
-Time per request:       4.657 [ms] (mean)
-Time per request:       1.164 [ms] (mean, across all concurrent requests)
-Transfer rate:          218.08 [Kbytes/sec] received
-```
-
-因为时间关系，没有测试nginx，PHP7有opcache 版本和无opcache 版本，但是以此为基准，只会更快。
-
 
 # 写在后面
 
-在以PHP5.6.27的基础上开发，但是开发遵循PHP7.2.0的开发原则，AIPHP可以在PHP5.6.27 和 PHP7.2.0共存，为以后升级做基础。
+在以PHP5.6.27的基础上开发，但是开发遵循PHP7.2.0的开发原则，可以在PHP5.6.27 和 PHP7.2.0共存，为以后升级做基础。
 
 因为时间关系，现在框架只实现类目前功能所需要的框架功能，在后续的开发中会按需一一增加，而框架中也有一套预留类加载新功能类的方法，
